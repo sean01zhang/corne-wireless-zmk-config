@@ -37,29 +37,29 @@
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // | `    |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |      |
-// |      |     |     |  -  |  +  |     |   | LFT | DWN |  UP | RGT |     |      |
-// | CAPS |     |     |  _  |  =  |     |   |     |     |     |     |     |      |
+// |      |     |     |     |     |     |   | LFT | DWN |  UP | RGT |     |      |
+// | CAPS |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    |     |     |     |   |     |     |     |
                         display-name = "Lower";
                         bindings = <
-   &kp GRAVE &kp N1 &kp N2 &kp N3    &kp N4    &kp N5  /* */  &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &trans
-   &trans    &trans &trans &kp MINUS &kp PLUS  &trans  /* */  &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp CAPS  &trans &trans &kp UNDER &kp EQUAL &trans  /* */  &trans   &trans   &trans &trans    &trans &trans
-                           &trans    &trans    &trans  /* */  &trans   &trans   &trans
+   &kp GRAVE &kp N1 &kp N2 &kp N3    &kp N4   &kp N5  /* */  &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &trans
+   &trans    &trans &trans &trans    &trans   &trans  /* */  &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
+   &kp CAPS  &trans &trans &trans    &trans   &trans  /* */  &trans   &trans   &trans &trans    &trans &trans
+                           &trans    &trans   &trans  /* */  &trans   &trans   &trans
                         >;
                 };
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// |      |     |     |     |     |     |   |  [  |  {  |  }  |  ]  |     |      |
-// |      |     |     |     |     |     |   |     |     |     |     |     |      |
+// |      |     |     |  -  |  +  |     |   |  [  |  {  |  }  |  ]  |     |      |
+// |      |     |     |  _  |  =  |     |   |     |     |     |     |     |      |
 //                    |     |     |     |   |     |     |     |
                         display-name = "Raise";
                         bindings = <
    &trans &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT /* */  &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &trans &trans   &trans &trans   &trans   &trans    /* */  &kp LBKT  &kp LBRC  &kp RBRC        &kp RBKT &trans   &trans
-   &trans &trans   &trans &trans   &trans   &trans    /* */  &trans    &trans    &trans          &trans   &trans   &trans
+   &trans &trans   &trans &kp MINUS &kp PLUS   &trans    /* */  &kp LBKT  &kp LBRC  &kp RBRC        &kp RBKT &trans   &trans
+   &trans &trans   &trans &kp UNDER &kp EQUAL   &trans    /* */  &trans    &trans    &trans          &trans   &trans   &trans
                           &trans   &trans   &trans    /* */  &trans    &trans    &trans
                         >;
                 };
@@ -74,6 +74,11 @@
                         timeout-ms = <50>;
                         key-positions = <19 20>;
                         bindings = <&kp ESC>;
+                };
+                combo_enter_kl {
+                        timeout-ms = <50>;
+                        key-positions = <20 21>;
+                        bindings = <&kp RET>;
                 };
         };
 };

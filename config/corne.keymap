@@ -15,6 +15,11 @@
 // - [ ] Add firmware keys
 // - [ ] Chord raise/lower
 
+&mt {
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+}
+
 // * LAYERS
 / {
         keymap {
@@ -24,14 +29,14 @@
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | \ |
 // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | RET  |
+// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT  |
 //                    | GUI | LWR | BKSP |   | SPC | RSE  | ALT |
                         display-name = "Base";
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSLH
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RET
-                  &kp LGUI &mo 1 &kp BKSP   &kp SPACE &mo 2 &kp RALT
+   &kp TAB   &kp Q &kp W       &kp E      &kp R      &kp T    /* */  &kp Y     &kp U      &kp I      &kp O       &kp P    &kp BSLH
+   &kp LCTRL &kp A &mt LCTRL S &mt LALT D &mt LGUI F &kp G    /* */  &kp H     &mt RGUI J &mt RALT K &mt RCTRL L &kp SEMI &kp SQT
+   &kp LSHFT &kp Z &kp X       &kp C      &kp V      &kp B    /* */  &kp N     &kp M      &kp COMMA  &kp DOT     &kp FSLH &kp RSHFT
+                               &kp LGUI   &mo 1      &kp BKSP /* */  &kp SPACE &mo 2      &kp RALT
                         >;
                 };
                 lower_layer {
@@ -51,16 +56,16 @@
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
+// |  ~   |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
 // |      |     |     |  -  |  +  |     |   |  [  |  {  |  }  |  ]  |     |      |
 // |      |     |     |  _  |  =  |     |   |     |     |     |     |     |      |
 //                    |     |     |     |   |     |     |     |
                         display-name = "Raise";
                         bindings = <
-   &trans &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT /* */  &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &trans &trans   &trans &kp MINUS &kp PLUS   &trans    /* */  &kp LBKT  &kp LBRC  &kp RBRC        &kp RBKT &trans   &trans
-   &trans &trans   &trans &kp UNDER &kp EQUAL   &trans    /* */  &trans    &trans    &trans          &trans   &trans   &trans
-                          &trans   &trans   &trans    /* */  &trans    &trans    &trans
+   &kp TILDE &kp EXCL &kp AT &kp HASH  &kp DLLR   &kp PRCNT /* */  &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
+   &trans    &trans   &trans &kp MINUS &kp PLUS   &trans    /* */  &kp LBKT  &kp LBRC  &kp RBRC        &kp RBKT &trans   &trans
+   &trans    &trans   &trans &kp UNDER &kp EQUAL  &trans    /* */  &trans    &trans    &trans          &trans   &trans   &trans
+                             &trans    &trans     &trans    /* */  &trans    &trans    &trans
                         >;
                 };
         };

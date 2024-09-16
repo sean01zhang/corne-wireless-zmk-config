@@ -15,21 +15,20 @@
 // - [ ] Add firmware keys
 // - [ ] Chord raise/lower
 
+&mt {
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+};
 
 // * LAYERS
 / {
-        &mt {
-                flavor = "tap-preferred";
-                tapping-term-ms = <200>;
-        };
-
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | \ |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | \     |
+// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '    |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT  |
 //                    | GUI | LWR | BKSP |   | SPC | RSE  | ALT |
                         display-name = "Base";
